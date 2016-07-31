@@ -5,7 +5,7 @@
 ### Aufgabe 1: HTML Seite
 
 Erstelle einen einfache HTML5 Seite mit Namen "blockout.html", die folgenden 
-Bereichen beinhaltet:
+Bereiche beinhaltet:
 
  - einer STYLE (css) Section 
  - verlinke jQuery (>=3.1)
@@ -111,7 +111,7 @@ drei "if ( a=b && c=d )" statements erledigt sein.
 Noch bewegt sich nichts aber alles ist bereit.
 
 *Hints:* 
- - http://www.w3schools.com/js/js_if_else.asp
+ - http://www.w3schools.com/js/js\_if\_else.asp
  - http://www.w3schools.com/js/js_comparisons.asp
 
 ### Aufgabe 7: Do Move
@@ -137,7 +137,7 @@ In der Developer Console kannst Du auch mit "wing_position=42" die Bewegung test
 *Hints:*
  - Setzen der Position: http://api.jquery.com/css/ "wing.css(left,...);"
  - Der parameter zu "left:" sollte ein Sting sein der so aussieht "100px";
- - http://www.w3schools.com/jsref/met_win_setinterval.asp
+ - http://www.w3schools.com/jsref/met\_win\_setinterval.asp
 
 ### Aufgabe 8: Der Ball
 
@@ -149,11 +149,11 @@ Wie für den Wing erzeugen wir ein paar globale Variablen, diesmal haben wir abe
 X und Y Koordinaten und Richtungen:
 
  - ball;  Wie bei "wing" erzeuge eine globale Variable "ball" für des jQuery Objekt 
- - ball_position_x=400;
- - ball_position_y=500;
+ - ball\_position\_x=400;
+ - ball\_position\_y=500;
  - ball_speed=10;
- - ball_direction_x=7;
- - ball_direction_y=-7;
+ - ball\_direction\_x=7;
+ - ball\_direction\_y=-7;
 
 Deine Funktion do_move() muss jetzt so erweitert werden, dass Sie nicht nur den Wing sondern
 auch den Ball bewegt.
@@ -168,8 +168,8 @@ do_move().
 Wenn der Wing das Spielfeld verlassen würde, dann setze die Position auf die maximal/minimal Position und
 setzt die wing_direction auf 0.
 
-Beim Ball ist es schwieriger. Wenn der Ball z.B. die linke Wand treffen würde (ball_position_x<0), dann
-setze die ball_position auf 0 und drehe ball_direction_x um. Mach das vorerst für alle 4 Wände.
+Beim Ball ist es schwieriger. Wenn der Ball z.B. die linke Wand treffen würde (ball\_position\_x<0), dann
+setze die ball\_position\_x auf 0 und drehe ball\_direction\_x um. Mach das vorerst für alle 4 Wände.
 
 Probier es aus. Fliegt der Ball durch das Spielfeld und prallt sauber ab, oder gibt es noch Fehler ?
 
