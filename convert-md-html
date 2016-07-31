@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cat << EOF > html-javascript-workshop.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop</title>
+</head>
+<body>
+EOF
+
+/home/alex/node_modules/showdown/bin/showdown.js makehtml -i html-javascript-workshop.md -u UTF8 >> html-javascript-workshop.html
+
+echo "</body>" >> html-javascript-workshop.html
+
