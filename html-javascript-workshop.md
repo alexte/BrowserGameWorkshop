@@ -143,7 +143,7 @@ In der Developer Console kannst Du auch mit "wing_position=42" die Bewegung test
 
 Für den Ball definiere ein weiteres DIV Element mit ID "ball" innerhalb des DIV "field". 
 Wie beim Wing kannst Du die Position, Form und Farbe per CSS setzen. Setze eine Höhe und 
-Breite von 20 Pixel und mach den Ball rund. (Hint "border_radius")
+Breite von 20 Pixel und mach den Ball rund. (Hint "border-radius")
 
 Wie für den Wing erzeugen wir ein paar globale Variablen, diesmal haben wir aber
 X und Y Koordinaten und Richtungen:
@@ -160,7 +160,7 @@ auch den Ball bewegt.
 
 Wenn Du das jetzt ausprobierst wird der Ball einfach aus dem Spielfeld fliegen. Also weiter zu Aufgabe 9.
 
-### Aufgabe 9: Die Wand
+### Aufgabe 9: Der Spielfeldrand
 
 Sowohl der Ball als auch der Wing können aus dem Spielfeld geraten. Das verhindern wir in der Funktion
 do_move().
@@ -172,4 +172,87 @@ Beim Ball ist es schwieriger. Wenn der Ball z.B. die linke Wand treffen würde (
 setze die ball\_position\_x auf 0 und drehe ball\_direction\_x um. Mach das vorerst für alle 4 Wände.
 
 Probier es aus. Fliegt der Ball durch das Spielfeld und prallt sauber ab, oder gibt es noch Fehler ?
+Verändere die Variablen ball\_speed, wing\_speed und den Timer Interval so, dass das Spiel flüssig
+läuft.
+
+### Aufgabe 10: Wing Kollision
+
+Schreib eine neue Funktion wing_collision die folgende Aufgabe hat:
+  
+ - Prüfe ob der tief genug ist um mit dem Wing zu kollidieren
+ - wenn ja prüfe ob die X Position des Balles auf die X position und Breite des wings passt und errechne eine 
+   Wert zwischen 0 und 1, wobei 0 eine Ballberührung am linke Rand und 1 am rechte Rand des Wings bedeutet.
+ - aus diesem Wert machen wir jetzt einen Winkel mithilfe dieser Formel 
+
+	$$
+	Winkel = PI/4+Wert*PI/2  
+	$$
+
+   Das sollte einen Winkel zwischen 45 und 135 Grad ergeben.
+ - Errechne mit diesem Winkel (Sinus, Cosinus) und ball_speed, neue Werte für wing_direction.
+
+Rufe nun die Funktion in do_move auf, und probiere ob der Wing funktioniert.
+
+*Hint:* 
+ - Winkel in Javascript: Math.PI, Math.sin(), Math.cos()
+ - Nachdem die Berechnung nicht ganz trivial ist gib deine Werte im DIV "debug" aus. $('#debug').text(...).
+   interessant sind Ball und Wing positionen, der errechnete wert 0 bis 1, der Winkel, die ball_direction.
+
+### Aufgabe 11: Steine
+
+Wir brauchen Funktionen die Steine erzeugen, verwalten und entfernen.
+
+Definiere einen globalen leeren Array "bricks".
+
+Definiere eine CSS class "brick" die einen Stein in Größe, Form und Farbe definiert.
+
+Schreib eine neue Funktion "new_brick" mit der Input Paramtern: Position x, y, size_x, size_y
+
+ - Erzeuge ein DOM Element mit $("<div class...");
+ - Setze die Position X,Y und die Größe ( .css(...) )
+ - Füge das Element dem DIV "field" hinzu.
+ - Erzeuge ein lokales Javascript Objekt "brick" mit folgenden Attributen:
+   - element: das neue DOM Element
+   - pos_x
+   - pox_y
+   - size_x
+   - size_y
+ - Füge das Objekt "brick" dem Array "bricks" hinzu.
+
+Schreibe ein Funktion "remove_brick" mit paramter i (eine id im bricks array) die 
+den Brick aus dem DOM tree und aus dem brick array löscht.
+
+Probiere die Funtionen im Console Window deines Browser aus. Du solltest
+mit new_brick(..) und remove_brick(..) Steine erzeugen und löschen können.
+
+*Hints:*
+ - http://www.w3schools.com/js/js_arrays.asp
+ - http://api.jquery.com/append/
+ - http://www.w3schools.com/js/js_objects.asp
+ - http://www.w3schools.com/jsref/jsref_push.asp
+ - http://api.jquery.com/remove/
+ - http://api.jquery.com/remove/
+ - http://www.w3schools.com/jsref/jsref_splice.asp
+
+### Aufgabe 12: Die Wand
+
+Baue eine Funktion "start_level" und eine function "build_wall".
+
+"start_level" soll den Startwerte für ball und wing Position und Richtung setzen 
+und build_wall aufrufen.
+
+"build_wall" soll in einer doppelten Schleife 6 Reihen von Steinen in das Spielfeld setzen.
+Rechne Dir anhand der Stein- und Spielfeldgröße eine sinvolle Anzahl an Steinen pro Reihe aus.
+build_wall soll davor aber alle alten Steine löschen, indem du per jQuery alle class 
+"brick" DOM element löscht und den "bricks" Array leerst.
+
+"start_level" trägst Du jetzt in deine .ready() Funktion ein und Du solltest deine Bricks Wall sehen.
+
+### Aufgabe 13: Stein Kollision
+
+### Aufgabe 14: Level Ende
+
+### Aufgabe 15: Game Over
+
+### Aufgabe 16: Punktezähler
 
