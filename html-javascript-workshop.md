@@ -1,7 +1,7 @@
 
 # Browser Game Workshop: Blockout (deutsch)
 
-Das Ziel dieses Workshops ist das Du selbst ein Browser Game programmierst.
+Das Ziel dieses Workshops ist, dass Du selbst ein Browser Game programmierst.
 Der Workshop teilt die Aufgabe in Teilaufgaben und beschreibt diese.
 Mit den Hints solltest Du Anleitungen finden wie die einzelnen Teilaufgaben
 gelöst werden können.
@@ -25,7 +25,7 @@ ob die Seite Fehlerfrei lädt.
 
 Positioniere das DIV "field" mit absoluten Koordinaten 20 Pixel von links und
 20 Pixel von oben, und mache as 800 mal 600  Pixel groß. Außerdem mach diese
-Rechteck schwarz und gib einen dicken roten Rand.
+Rechteck schwarz und gib ihm einen dicken roten Rand.
 
 Schau die das Ergebnis im Browser an.
 
@@ -306,9 +306,9 @@ Ist jetzt "lifes" größer 0, setze Du ball_position auf einen sinnvollen Wert,
 und mit einem 2 Sekunden Timer setzt Du ball_direction auf eine Richtung die nach
 oben zeigt. Das kannst Du direkt im setTimeout Aufruf als inline Funktion erledigen.
 
-Ist "lifes" auf 0 zeigst Du das DIV names "game_over" an.
+Ist "lifes" auf 0 zeigst Du das DIV "game_over" an.
 
-Damit man das offene untere Ende des Spielfelds erkennt entfernen den unteren border 
+Damit man das offene untere Ende des Spielfelds erkennt, entferne den unteren border 
 der DIVs "field"
 
 Fertig!
