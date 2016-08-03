@@ -1,6 +1,10 @@
 
-# Browser Game: Blockout Workshop (deutsch)
+# Browser Game Workshop: Blockout (deutsch)
 
+Das Ziel dieses Workshops ist das Du selbst ein Browser Game programmierst.
+Der Workshop teilt die Aufgabe in Teilaufgaben und beschreibt diese.
+Mit den Hints solltest Du Anleitungen finden wie die einzelnen Teilaufgaben
+gelöst werden können.
 
 ### Aufgabe 1: HTML Seite
 
@@ -236,7 +240,7 @@ mit new_brick(..) und remove_brick(..) Steine erzeugen und löschen können.
 
 ### Aufgabe 12: Die Wand
 
-Baue eine Funktion "start_level" und eine function "build_wall".
+Baue eine Funktion "start_level" und eine Funktion "build_wall".
 
 "start_level" soll den Startwerte für ball und wing Position und Richtung setzen 
 und build_wall aufrufen.
@@ -250,9 +254,65 @@ build_wall soll davor aber alle alten Steine löschen, indem du per jQuery alle 
 
 ### Aufgabe 13: Stein Kollision
 
+Noch fliegt der Ball durch die Steine ohne Schaden an zu richten, also schreiben wir eine Funktion
+"brick_collision" die folgende Aufgaben enthält:
+
+ - Geh in einer Schleife durch den Array "bricks" und prüfe ob sich Stein und Ball DIVs überdecken.
+ - Wenn ja prüfe ob die X oder Y Überdeckung größer ist.
+ - Ist die X Überdeckung größer soll der Ball an einer X Linie abprallen
+ - Ist die Y Überdeckung größer soll der Ball an einer Y Linie abprallen
+ - Wenn beide Überdeckungen gleich oder ähnlich gleich sind kannst Du den Ball komplett zurück prallen lassen
+ - den betroffen Stein kannst Du mit der deiner Funktion remove_brick entfernen.
+
+Das Abprallen kannst Du durch invertieren der der ball_direction erzielen.
+"brick_collision" rufst Du jetzt dort auf wo auch "wing_collision" aufgerufen wird.
+
+Probiere dein Spiel aus und beobachte ob alles sinnvoll aussieht. Wahrscheinlich kann man die 
+den Algorithums für die Abprallrichtung verbessern.
+
 ### Aufgabe 14: Level Ende
+
+Designe ein DIV "level_finished" das Du hinter das DIV "field" setzt. Das DIV soll eine netten groß 
+geschriebenen Text beinhalten und mittig über dem Spielfeld liegen. Nach dem Designen versteckst Du 
+das DIV aber noch per CSS Style (Siehe CSS: display)
+
+Irgendwann sind alle Steine eliminiert. Das können wir leicht festellen indem wir am Beginn der "brick_collision"
+prüfen wie lang der Array "bricks" ist. Ist der Array leer rufen die Funktion "level_finished" auf.
+
+Diese Funktion "level_finished" soll das DIV "level_finished" anzeigen und einen 5 Sekunden Timer setzen 
+der start_level aufruft. In "start_level" musst Du den "level_finished" wieder verschwinden lassen.
+
+*Hints:* 
+ - http://www.w3schools.com/cssref/pr_class_display.asp
+ - http://api.jquery.com/show/
+ - http://www.w3schools.com/jsref/met_win_settimeout.asp
 
 ### Aufgabe 15: Game Over
 
-### Aufgabe 16: Punktezähler
+Definiere ein global Variable "lifes" und setze sie auf 5.
+
+Definiere ein DIV "game_over", das so wie "level_finished" aussieht, und ein DIV "lifes" das
+Du rechts neben dem Spielfeld platzierst. In "start_level" schreibst Du per jQuery die
+Variable "lifes" in das DIV "lifes"
+
+Noch kann der Spieler nicht verlieren. Es fehlt noch die Prüfung ob der Ball unten rausfliegt.
+In "do_move" kannst Du die Y Position des Balls abfragen. Ist sie unterhalb des "field" DIV
+rufst Du die Funktion "ball_dropped" auf:
+
+In "ball_dropped" setze du ball_direction auf 0 und reduzierst Du die variable "lifes" um eins, 
+und zeigst dies im DIV "lifes" an.
+
+Ist jetzt "lifes" größer 0, setze Du ball_position auf einen sinnvollen Wert,
+und mit einem 2 Sekunden Timer setzt Du ball_direction auf eine Richtung die nach
+oben zeigt. Das kannst Du direkt im setTimeout Aufruf als inline Funktion erledigen.
+
+Ist "lifes" auf 0 zeigst Du das DIV names "game_over" an.
+
+Damit man das offene untere Ende des Spielfelds erkennt entfernen den unteren border 
+der DIVs "field"
+
+Fertig!
+
+Probier Dein Spiel aus. Wenn es funktioniert und Du die Möglichkeit hast dein Spiel auf
+einen öffentlichen Webserver zu stellen, schick mir doch das URL an alex@mail.at.
 
