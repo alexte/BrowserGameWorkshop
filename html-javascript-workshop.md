@@ -192,8 +192,8 @@ Schreib eine neue Funktion wing_collision die folgende Aufgabe hat:
 	Winkel = PI/4+Wert*PI/2  
 	$$
 
-   Das sollte einen Winkel zwischen 45 und 135 Grad ergeben.
- - Errechne mit diesem Winkel (Sinus, Cosinus) und ball_speed, neue Werte für wing_direction.
+   Das sollte einen Winkel zwischen 45 und 135 Grad (in Radiant!) ergeben.
+ - Errechne mit diesem Winkel (Sinus, Cosinus) und ball_speed, neue Werte für ball_direction.
 
 Rufe nun die Funktion in do_move auf, und probiere ob der Wing funktioniert.
 
