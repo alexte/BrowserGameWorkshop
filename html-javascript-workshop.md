@@ -2,29 +2,30 @@
 # Browser Game Workshop: Blockout (deutsch)
 
 Das Ziel dieses Workshops ist, dass Du selbst ein Browser Game programmierst.
+
 Der Workshop teilt die Aufgabe in Teilaufgaben und beschreibt diese.
 Mit den Hints solltest Du Anleitungen finden wie die einzelnen Teilaufgaben
-gelöst werden können.
+gelöst werden können. 
 
 ### Aufgabe 1: HTML Seite
 
-Erstelle einen einfache HTML5 Seite mit Namen "blockout.html", die folgenden 
+Erstelle eine einfache HTML5 Seite mit Namen "blockout.html", die folgende
 Bereiche beinhaltet:
 
- - einer STYLE (css) Section 
+ - eine STYLE (css) Section 
  - verlinke jQuery (>=3.1)
  - einer Javascript Section mit der jQuery Startfuntion $(document).ready(..)
- - einem DIV im BODY mit ID "field"
+ - ein DIV HTML Element im BODY mit ID "field"
 
 öffne die Seite in Chrome und prüfe in den "Developer Tools" (CTRL-SHIFT I) 
-ob die Seite Fehlerfrei lädt.
+ob die Seite fehlerfrei lädt.
 
 *Hint:* http://alext.mail.at/wp-content/uploads/2014/11/html5-skeleton.html
 
 ### Aufgabe 2: Spielfeld
 
-Positioniere das DIV "field" mit absoluten Koordinaten 20 Pixel von links und
-20 Pixel von oben, und mache as 800 mal 600  Pixel groß. Außerdem mach diese
+Positioniere das DIV "field" per CSS mit absoluten Koordinaten 20 Pixel von links 
+und 20 Pixel von oben, und mache as 800 mal 600  Pixel groß. Außerdem mach dieses
 Rechteck schwarz und gib ihm einen dicken roten Rand.
 
 Schau die das Ergebnis im Browser an.
@@ -258,16 +259,15 @@ Noch fliegt der Ball durch die Steine ohne Schaden an zu richten, also schreiben
 "brick_collision" die folgende Aufgaben enthält:
 
  - Geh in einer Schleife durch den Array "bricks" und prüfe ob sich Stein und Ball DIVs überdecken.
- - Wenn ja prüfe ob die X oder Y Überdeckung größer ist.
- - Ist die X Überdeckung größer soll der Ball an einer X Linie abprallen
- - Ist die Y Überdeckung größer soll der Ball an einer Y Linie abprallen
- - Wenn beide Überdeckungen gleich oder ähnlich gleich sind kannst Du den Ball komplett zurück prallen lassen
- - den betroffen Stein kannst Du mit der deiner Funktion remove_brick entfernen.
+ - Rechne Dir dafür einen Punkt am Rand des Balls aus in die Richtungen X,Y in die der Ball fliegt.
+ - Berührt der Ball oben/unten soll er nach unten/open prallen
+ - Berührt der seitlich soll der ball seitlich prallen.
+ - Den betroffen Stein kannst Du mit der deiner Funktion remove_brick entfernen.
 
 Das Abprallen kannst Du durch invertieren der der ball_direction erzielen.
 "brick_collision" rufst Du jetzt dort auf wo auch "wing_collision" aufgerufen wird.
 
-Probiere dein Spiel aus und beobachte ob alles sinnvoll aussieht. Wahrscheinlich kann man die 
+Probiere dein Spiel aus und beobachte ob alles sinnvoll aussieht. Vielleicht kann man die 
 den Algorithums für die Abprallrichtung verbessern.
 
 ### Aufgabe 14: Level Ende
